@@ -4,9 +4,9 @@ const animeTotal = "http://neko-bot.net/info/totalanime.txt";
 const fetch = require('node-fetch')
 
 
-exports.random = {
+
   
-  neko(min, max, source) {
+function neko(min, max, source) {
     var total = await fetch(nekoTotal).text // get total images
     ID = Math.floor((Math.random() * total) + 1); // calculate ID of image at random
     if (source = true) {
@@ -24,7 +24,7 @@ exports.random = {
   
   
   
-  anime(min, max, source) {
+function anime(min, max, source) {
     var total = await fetch(nekoTotal).text // get total images
     ID = Math.floor((Math.random() * total) + 1); // calculate ID of image at random
     if (source = true){
@@ -38,4 +38,4 @@ exports.random = {
     return out
   };  
   
-}
+module.exports = {neko,anime}
