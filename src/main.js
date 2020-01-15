@@ -6,15 +6,17 @@ const fetch = require('node-fetch')
 
 
   
-function neko(min, max, source) {
-    let total = await fetch(nekoTotal).then(res => res.text())
-    
+async function neko(min, max, source) {
+    var total = await fetch(nekoTotal)
+    .then(res => res.text())
+    //console.log(total)
 
 
  // get total images
     ID = Math.floor((Math.random() * total) + 1); // calculate ID of image at random
     if (source = true) {
       source_ = "not finished"
+      url = "http://neko-bot.net/nekos/"+ID+".png"
       out = {"url":url, "source":source_, "id":ID} //output as json (?)
     }
     //if source is not true, output normally. (eg if its a string/0)    
@@ -28,8 +30,13 @@ function neko(min, max, source) {
   
   
   
-function anime(min, max, source) {
-    var total = await fetch(animeTotal).text // get total images
+async function anime(min, max, source) {
+    var total = await fetch(animeTotal)
+    .then(res => res.text()) 
+    
+    // get total images
+    
+    
     ID = Math.floor((Math.random() * total) + 1); // calculate ID of image at random
     if (source = true){
       source_ = "not finished"
@@ -41,5 +48,5 @@ function anime(min, max, source) {
     }
     return out
   };  
-  
+//console.log(neko())
 module.exports = {neko,anime}
