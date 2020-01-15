@@ -1,13 +1,16 @@
 const nekoTotal = "http://neko-bot.net/info/totalnekos.txt";
 const animeTotal = "http://neko-bot.net/info/totalanime.txt";
 
+const fetch = requier('node-fetch')
+
 class random {
   
   neko(min, max, source) {
-    var total = fetch(nekoTotal) // get total images
-    ID = Math.floor((Math.random() * total) + 1); // calculate ID of image
+    var total = await fetch(nekoTotal).text // get total images
+    ID = Math.floor((Math.random() * total) + 1); // calculate ID of image at random
     if (source = true) {
-      out = {"url":url, "source":source, "id":ID} //output as json (?)
+      source_ = "not finished"
+      out = {"url":url, "source":source_, "id":ID} //output as json (?)
     }
     //if source is not true, output normally. (eg if its a string/0)    
     if (source != true){
@@ -21,10 +24,11 @@ class random {
   
   
   anime(min, max, source) {
-    var total = fetch(nekoTotal) // get total images
-    ID = Math.floor((Math.random() * total) + 1); // calculate ID of image
+    var total = await fetch(nekoTotal).text // get total images
+    ID = Math.floor((Math.random() * total) + 1); // calculate ID of image at random
     if (source = true){
-      out = {"url":url, "source":source, "id":ID} //output as json (?)
+      source_ = "not finished"
+      out = {"url":url, "source":source_, "id":ID} //output as json (?)
     }
     //if source is not true, output normally. (eg if its a string/0)
     if (source != true){
