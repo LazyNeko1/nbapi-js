@@ -7,7 +7,11 @@ const fetch = require('node-fetch')
 
   
 function neko(min, max, source) {
-    var total = await fetch(nekoTotal).text // get total images
+    let total = await fetch(nekoTotal).then(res => res.text())
+    
+
+
+ // get total images
     ID = Math.floor((Math.random() * total) + 1); // calculate ID of image at random
     if (source = true) {
       source_ = "not finished"
@@ -25,7 +29,7 @@ function neko(min, max, source) {
   
   
 function anime(min, max, source) {
-    var total = await fetch(nekoTotal).text // get total images
+    var total = await fetch(animeTotal).text // get total images
     ID = Math.floor((Math.random() * total) + 1); // calculate ID of image at random
     if (source = true){
       source_ = "not finished"
