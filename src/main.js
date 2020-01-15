@@ -3,7 +3,8 @@ const animeTotal = "http://neko-bot.net/info/totalanime.txt";
 
 const fetch = requier('node-fetch')
 
-class random {
+
+exports.random = {
   
   neko(min, max, source) {
     var total = await fetch(nekoTotal).text // get total images
