@@ -1,13 +1,13 @@
 
+
 const nekoTotal = "http://neko-bot.net/info/totalnekos.txt";
 const animeTotal = "http://neko-bot.net/info/totalanime.txt";
 
 const fetch = require('node-fetch')
 
 
-
   
-async function neko(min, max, source=false) {
+module.exports.neko = async function neko_(min, max, source=false) {
     var total = await fetch(nekoTotal)
     .then(res => res.text())
     //console.log(total)
@@ -31,7 +31,7 @@ async function neko(min, max, source=false) {
   
   
   
-async function anime(min, max, source=false) {
+module.exports.anime = async function anime_(min, max, source=false) {
     var total = await fetch(animeTotal)
     .then(res => res.text()) 
     
@@ -53,4 +53,8 @@ async function anime(min, max, source=false) {
 //anime(source=false)           // testing
   //.then(console.log)          // testing
   //.catch(console.error)       // testing
-module.exports = {neko,anime}
+
+//module.exports.neko=neko_
+//module.exports.anime=anime_
+
+
