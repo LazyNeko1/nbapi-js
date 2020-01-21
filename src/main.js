@@ -1,3 +1,4 @@
+
 const nekoTotal = "http://neko-bot.net/info/totalnekos.txt";
 const animeTotal = "http://neko-bot.net/info/totalanime.txt";
 
@@ -6,7 +7,7 @@ const fetch = require('node-fetch')
 
 
   
-async function neko(min, max, source) {
+async function neko(min, max, source=false) {
     var total = await fetch(nekoTotal)
     .then(res => res.text())
     //console.log(total)
@@ -14,23 +15,23 @@ async function neko(min, max, source) {
 
  // get total images
     ID = Math.floor((Math.random() * total) + 1); // calculate ID of image at random
-    if (source = true) {
+    if (source == true) {
       source_ = "not finished"
       url = "http://neko-bot.net/nekos/"+ID+".png"
-      out = {"url":url, "source":source_, "id":ID} //output as json (?)
-    }
-    //if source is not true, output normally. (eg if its a string/0)    
-    if (source != true){
+      out_s = {"url":url, "source":source_, "id":ID} //output as json (?)
+      return out_s
+    } else if (source == false){
       out = "http://neko-bot.net/nekos/" + ID + ".png"
+      return out
     }
-    return out
+    
   };
   
   
   
   
   
-async function anime(min, max, source) {
+async function anime(min, max, source=false) {
     var total = await fetch(animeTotal)
     .then(res => res.text()) 
     
@@ -38,15 +39,18 @@ async function anime(min, max, source) {
     
     
     ID = Math.floor((Math.random() * total) + 1); // calculate ID of image at random
-    if (source = true){
+    if (source == true){
       source_ = "not finished"
-      out = {"url":url, "source":source_, "id":ID} //output as json (?)
-    }
-    //if source is not true, output normally. (eg if its a string/0)
-    if (source != true){
+      url = "http://neko-bot.net/anime/"+ID+".png"
+      out_s = {"url":url, "source":source_, "id":ID} //output as json (?)
+      return out_s
+    } else if (source == false){
       out = "http://neko-bot.net/anime/"+ID+".png"
+      return out
     }
-    return out
+    
   };  
-//console.log(neko())
-module.exports = {neko,anime}
+anime(source=false)
+  .then(console.log)
+  .catch(console.error)
+//module.exports = {neko,anime}
