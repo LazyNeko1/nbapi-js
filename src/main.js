@@ -50,7 +50,7 @@ async function anime(min, max, source=false) {
     }
     
   };  
-anime(source=false)
-  .then(console.log)
-  .catch(console.error)
-//module.exports = {neko,anime}
+//anime(source=false)           // testing
+  //.then(console.log)          // testing
+  //.catch(console.error)       // testing
+module.exports = {neko,anime}
