@@ -1,6 +1,6 @@
 # nbapi-js
 -----------------------
-npm i nbapi
+
 
 Very simple and very new NBApi module in JS
 
