@@ -7,7 +7,7 @@ const fetch = require('node-fetch')
 
 
   
-module.exports.neko = async function neko_(min, max, source=false) {
+module.exports.neko = async function neko_(source) {
     var total = await fetch(nekoTotal)
     .then(res => res.text())
     //console.log(total)
@@ -31,7 +31,7 @@ module.exports.neko = async function neko_(min, max, source=false) {
   
   
   
-module.exports.anime = async function anime_(min, max, source=false) {
+module.exports.anime = async function anime_(source) {
     var total = await fetch(animeTotal)
     .then(res => res.text()) 
     
