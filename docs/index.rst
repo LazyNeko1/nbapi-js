@@ -1,8 +1,11 @@
-#Main Javascript Docs
+Main Javascript Docs
 ----------
 
-#Random
- ##Neko
+Random
+----------
+ Neko
+----------
   will be added soon
- ##Anime
+ Anime
+----------
   will be added soon
